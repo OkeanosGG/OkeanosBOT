@@ -117,7 +117,7 @@ if (msg.content.toLowerCase() === prefix + 'yardım' ) { msg.channel.sendMessage
 }
 if (msg.content.toLowerCase() === prefix + 'çayiç' ) { msg.channel.sendMessage('https://gph.is/g/aR957OE')
 }
-if (msg.content.toLowerCase() === prefix + 'adam8' ) { msg.channel.sendMessage('okeanos')
+if (msg.content.toLowerCase() === prefix + 'biladerim' ) { msg.channel.sendMessage('için')
 }
 if (msg.content.toLowerCase() === prefix + 'adam9' ) { msg.channel.sendMessage('okeanos')
 }
