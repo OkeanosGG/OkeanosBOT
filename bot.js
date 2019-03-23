@@ -113,7 +113,7 @@ if (msg.content.toLowerCase() === prefix + 'sunucununenguzelikim' ) { msg.channe
 }
 if (msg.content.toLowerCase() === prefix + 'okeanostext' ) { msg.channel.sendMessage('https://giphy.com/gifs/cRNcdMZ53uK451ZSEp')
 }
-if (msg.content.toLowerCase() === prefix + 'yardım' ) { msg.channel.sendMessage('Komutlar **!nasılsın** **!kedi** **!köpek** **!sunucununenguzelikim** **!okeanostext** **!çayiç**')
+if (msg.content.toLowerCase() === prefix + 'adam8' ) { msg.channel.sendMessage('Komutlar **!nasılsın** **!kedi** **!köpek** **!sunucununenguzelikim** **!okeanostext** **!çayiç**')
 }
 if (msg.content.toLowerCase() === prefix + 'çayiç' ) { msg.channel.sendMessage('https://gph.is/g/aR957OE')
 }
