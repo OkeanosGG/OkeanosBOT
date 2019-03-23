@@ -47,12 +47,6 @@ client.reload = command => {
   });
 };
 
-client.on('guildBanAdd' , (guild, user) => {
-  let hosgeldingörüşürüz = guild.channels.find('name', 'hosgeldin-görüşürüz');
-  if (!hosgeldingörüşürüz) return;
-  hosgeldingörüşürüz.send('https://media.giphy.com/media/8njotXALXXNrW/giphy.gif **Adalet dağıtma zamanı gelmiş!** '+ user.username +'**Bakıyorum da suç işlemiş,Yargı dağıtmaya devam** :fist: :writing_hand:  :spy:' );
-});
-
 client.load = command => {
   return new Promise((resolve, reject) => {
     try {
@@ -86,45 +80,12 @@ client.unload = command => {
 
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
-    msg.channel.sendMessage('Aleyküm Selam Güzel Kardeşim!');
-  }
-  if (msg.content.toLowerCase() === 'selam') {
-    msg.channel.sendMessage('Aleyküm Selam Bro!');
-  }
-  if (msg.content.toLowerCase() === 'emir') {
-    msg.channel.sendMessage('**Başarılarını gizlemek, en büyük başarıdır.** ```-Emir```https://gph.is/g/Zxd0V6Z');
-  }
-  if (msg.content.toLowerCase() === 'yardım') {
-    msg.channel.sendMessage('geliştirme aşamasındadır');
-  }
-  if (msg.content.toLowerCase() === 'highliôre') {
-    msg.channel.sendMessage('**Medeniyet, insan olmak ile alakalıdır. Öldürmek ise insani bir dürtü** ```-Highliôre``` https://gph.is/g/E1Redqa');
-  }
-if (!msg.content.startsWith(prefix)) {
- return;
-}
-if (msg.content.toLowerCase() === prefix + 'nasılsın' ) { msg.channel.sendMessage('https://giphy.com/gifs/2YekIxL017LaJ9zbVX')
-}
-if (msg.content.toLowerCase() === prefix + 'kedi' ) { msg.channel.sendMessage('https://gph.is/g/4wnzzwZ')
-}
-if (msg.content.toLowerCase() === prefix + 'köpek' ) { msg.channel.sendMessage('https://gph.is/g/aXbjpR4')
-}
-if (msg.content.toLowerCase() === prefix + 'sunucununenguzelikim' ) { msg.channel.sendMessage('Tabiki De Sensin :D')
-}
-if (msg.content.toLowerCase() === prefix + 'okeanostext' ) { msg.channel.sendMessage('https://giphy.com/gifs/cRNcdMZ53uK451ZSEp')
-}
-if (msg.content.toLowerCase() === prefix + 'adam8' ) { msg.channel.sendMessage('Komutlar **!nasılsın** **!kedi** **!köpek** **!sunucununenguzelikim** **!okeanostext** **!çayiç**')
-}
-if (msg.content.toLowerCase() === prefix + 'çayiç' ) { msg.channel.sendMessage('https://gph.is/g/aR957OE')
-}
-if (msg.content.toLowerCase() === prefix + 'biladerim' ) { msg.channel.sendMessage('için')
-}
-if (msg.content.toLowerCase() === prefix + 'adam9' ) { msg.channel.sendMessage('okeanos')
-}
-if (msg.content.toLowerCase() === prefix + 'adam10' ) { msg.channel.sendMessage('okeanos')
-}
-if (msg.content.toLowerCase() === prefix + 'adam11' ) { msg.channel.sendMessage('okeanos')
-}
+		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
+			msg.author.sendMessage('Aleyküm selam,  hoş geldin ^^'); 
+		} else {
+		msg.reply('Aleyküm selam, hoş geldin ^^');
+		}
+	}
 });
 
 client.elevation = message => {
@@ -147,4 +108,4 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(ayarlar.token);
