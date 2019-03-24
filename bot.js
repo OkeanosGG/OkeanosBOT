@@ -107,7 +107,6 @@ if (msg.content.toLowerCase() === prefix + 'nasılsın' ) { msg.channel.sendMess
 }
 if (msg.content.toLowerCase() === prefix + 'çayiç' ) { msg.channel.sendMessage('https://gph.is/g/aR957OE')
 }
-
 });
 
 client.elevation = message => {
