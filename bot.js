@@ -47,6 +47,12 @@ client.reload = command => {
   });
 };
 
+client.on('guildBanAdd' , (guild, user) => {
+  let hosgeldingörüşürüz = guild.channels.find('name', 'hosgeldin-görüşürüz');
+  if (!hosgeldingörüşürüz) return;
+  hosgeldingörüşürüz.send('https://media.giphy.com/media/8njotXALXXNrW/giphy.gif **Adalet dağıtma zamanı gelmiş!** '+ user.username +'**Bakıyorum da suç işlemiş,Yargı dağıtmaya devam** :fist: :writing_hand:  :spy:' );
+});
+
 client.load = command => {
   return new Promise((resolve, reject) => {
     try {
@@ -80,12 +86,28 @@ client.unload = command => {
 
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
-		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
-			msg.author.sendMessage('Aleyküm selam,  hoş geldin ^^'); 
-		} else {
-		msg.reply('Aleyküm selam, hoş geldin ^^');
-		}
-	}
+    msg.channel.sendMessage('Aleyküm Selam Güzel Kardeşim!');
+  }
+  if (msg.content.toLowerCase() === 'selam') {
+    msg.channel.sendMessage('Aleyküm Selam Bro!');
+  }
+  if (msg.content.toLowerCase() === 'emir') {
+    msg.channel.sendMessage('**Başarılarını gizlemek, en büyük başarıdır.** ```-Emir```https://gph.is/g/Zxd0V6Z');
+  }
+  if (msg.content.toLowerCase() === 'yardım') {
+    msg.channel.sendMessage('geliştirme aşamasındadır');
+  }
+  if (msg.content.toLowerCase() === 'highliôre') {
+    msg.channel.sendMessage('**Medeniyet, insan olmak ile alakalıdır. Öldürmek ise insani bir dürtü** ```-Highliôre``` https://gph.is/g/E1Redqa');
+  }
+if (!msg.content.startsWith(prefix)) {
+ return;
+}
+if (msg.content.toLowerCase() === prefix + 'nasılsın' ) { msg.channel.sendMessage('https://giphy.com/gifs/2YekIxL017LaJ9zbVX')
+}
+if (msg.content.toLowerCase() === prefix + 'çayiç' ) { msg.channel.sendMessage('https://gph.is/g/aR957OE')
+}
+
 });
 
 client.elevation = message => {
